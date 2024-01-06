@@ -70,6 +70,7 @@ LIBS_ADDITIONAL: Final = [
 ]
 
 # BUILD_FLAGS: Final = "-D USE_NIMBLE"
+BUILD_FLAGS: Final = ""
 
 """Binary sensors"""
 BINARY_SENSOR_STATE: Final = {

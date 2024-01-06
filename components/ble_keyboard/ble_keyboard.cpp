@@ -2,11 +2,25 @@
 
 #include "ble_keyboard.h"
 #include "esphome/core/log.h"
+
+#if defined(USE_NIMBLE)
+
 #include <NimBLEServer.h>
 #include <NimBLEDevice.h>
 #include <NimBLEService.h>
 #include <NimBLECharacteristic.h>
 #include <NimBLEAdvertising.h>
+
+#else
+
+#include <BLEDevice.h>
+#include <BLEUtils.h>
+#include <BLEServer.h>
+#include "BLE2902.h"
+#include "BLEHIDDevice.h"
+
+#endif // USE_NIMBLE
+
 #include <string>
 #include <list>
 

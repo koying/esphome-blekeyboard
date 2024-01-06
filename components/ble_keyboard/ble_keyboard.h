@@ -4,7 +4,25 @@
 
 #include "esphome/core/component.h"
 #include "esphome/components/binary_sensor/binary_sensor.h"
+
+#if defined(USE_NIMBLE)
+
 #include <NimBLEServer.h>
+
+#define BLEDevice                  NimBLEDevice
+#define BLEServerCallbacks         NimBLEServerCallbacks
+#define BLECharacteristicCallbacks NimBLECharacteristicCallbacks
+#define BLEHIDDevice               NimBLEHIDDevice
+#define BLECharacteristic          NimBLECharacteristic
+#define BLEAdvertising             NimBLEAdvertising
+#define BLEServer                  NimBLEServer
+
+#else
+
+#include "BLEHIDDevice.h"
+
+#endif // USE_NIMBLE
+
 #include <BleKeyboard.h>
 #include <string>
 
